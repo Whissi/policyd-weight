@@ -320,7 +320,7 @@ $SIG{__DIE__} = sub {
 
 my $DEBUG        = 0;               # 1 or 0 - don't comment
 
-my $REJECTMSG    = "550 Mail appeared to be SPAM or forged. Ask your Mail/DNS-Administrator to correct HELO and DNS MX settings or to get removed from DNSBLs";
+my $REJECTMSG	 = "550 Mail appeared to be SPAM or forged. Ask your Mail/DNS-Administrator to correct HELO and DNS MX settings or to get removed from DNSBLs";
 
 my $REJECTLEVEL  = 1;               # Mails with scores which exceed this
                                     # REJECTLEVEL will be rejected
@@ -426,7 +426,7 @@ my $CACHESIZE       = 2000; # set to 0 to disable caching for spam results.
 
 my $CACHEMAXSIZE    = 4000; # at this number of entries cleanup takes place
 
-my $CACHEREJECTMSG  = '550 temporarily blocked because of previous errors';
+my $CACHEREJECTMSG  = $REJECTMSG . " [cached]";
 
 my $NTTL            = 1;    # after NTTL retries the cache entry is deleted
 
