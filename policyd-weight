@@ -677,7 +677,7 @@ if($CMD_DEBUG == 1)
     print "debug: USER:  $USER\n";
     print "debug: GROUP: $GROUP\n";
     print "debug: issuing user:  ".getpwuid($<)."\n";
-    print "debug: issuing group: ".getpwuid($()."\n";
+    print "debug: issuing group: ".getgrgid($()."\n";
 }
 
 $conf_str = "";
