@@ -892,12 +892,12 @@ if($NS && $NS =~ /\d/)
 
 
 # watch the version string, I'm afraid that they change to x.x.x notation
-if(Net::DNS->version() >= 0.50)
+if(Net::DNS->version() >= 0.50 && Net::DNS->version() <= 0.53)
 {
     $res->force_v4(1);  # force ipv4 usage, autodetection is broken till
                         # Net::DNS 0.53
 }
-else
+if(Net::DNS->version() < 0.50)
 {
     $res->igntc(1);    # ignore truncated packets if Net-DNS version is
                        # lower than 0.50
