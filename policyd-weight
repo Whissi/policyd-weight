@@ -482,6 +482,10 @@ my $TRY_BALANCE     = 0;    # If set to 1 policyd-weight closes connections
                             # established connections to one policyd-weight
                             # child
 
+my $IGNORE_RFC1918_A = 0;   # If enabled (1) A records with RFC1918 addresses
+			    # aren't treated as bogus addresses by policyd-weight
+		            # and therefore bogus_mx_score isn't added.
+
 # scores for checks, WARNING: they may manipulate eachother
 # or be factors for other scores.
 #                                       HIT score, MISS Score
@@ -2207,8 +2211,18 @@ sub weighted_check
                         
                             if($tmpcnt == 0)
                             {
-                                $from_addresses .= ' '.$ip_address;
-                            }
+				if($IGNORE_RFC1918_A == 1)
+                                {
+                                    if($ip_address !~ /(127\.|192\.168\.|10\.|172\.(?:1[6-9]|2\d|3[01])\.)/)
+                                    {
+                                        $from_addresses .= ' '.$ip_address;
+                                    }
+                                }
+                                else
+                                {
+                                    $from_addresses .= ' '.$ip_address;
+				}
+			    }
 
                             $addresses .= ' '.$ip_address;
                         

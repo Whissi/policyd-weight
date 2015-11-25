@@ -86,6 +86,10 @@ Retry a query without response after that many seconds
 If that many queries fail, the mail is accepted with \fB$MAXDNSERRMSG\fR.
 .br
 In total DNS queries this means: $MAXDNSERR * $DNS_RETRIES
+.IP "\fB$IGNORE_RFC1918_A\fR (default: 0)"
+.br
+If enabled (1) A records with RFC1918 addresses aren't treated as bogus
+addresses by policyd-weight and therefore bogus_mx_score isn't added.
 
 .SH "MISC SETTINGS"
 .ad

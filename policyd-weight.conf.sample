@@ -174,6 +174,10 @@
                             # established connections to one policyd-weight
                             # child
 
+   $IGNORE_RFC1918_A = 0;   # If enabled (1) A records with RFC1918 addresses
+                            # aren't treated as bogus addresses by policyd-weight
+                            # and therefore bogus_mx_score isn't added.
+
 # scores for checks, WARNING: they may manipulate eachother
 # or be factors for other scores.
 #                                       HIT score, MISS Score
