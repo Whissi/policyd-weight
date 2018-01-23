@@ -391,10 +391,7 @@ my $MAXDNSBLMSG   = '550 Your MTA is listed in too many DNSBLs';
 ## RHSBL settings
 my @rhsbl_score = (
     'multi.surbl.org',             4,        0,        'SURBL',
-    'rhsbl.ahbl.org',              4,        0,        'AHBL',
-    'dsn.rfc-ignorant.org',        3.5,      0,        'DSN_RFCI',
-    'postmaster.rfc-ignorant.org', 0.1,      0,        'PM_RFCI',
-    'abuse.rfc-ignorant.org',      0.1,      0,        'ABUSE_RFCI'
+    'rhsbl.ahbl.org',              4,        0,        'AHBL'
 );
 
 my $BL_ERROR_SKIP     = 2;  # skip a RBL if this RBL had this many continuous
