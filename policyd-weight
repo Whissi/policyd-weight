@@ -376,7 +376,6 @@ my @dnsbl_score = (
     'bl.spamcop.net',         3.75,       -1.5,        'SPAMCOP',
     'dnsbl.njabl.org',        4.25,       -1.5,        'BL_NJABL',
     'ix.dnsbl.manitu.net',    4.35,          0,        'IX_MANITU'
-    #'rbl.ipv6-world.net',     4.25,          0,        'IPv6_RBL'  #don't use, kept for testing failures!
 );
 
 my $MAXDNSBLHITS  = 2;  # If Client IP is listed in MORE
